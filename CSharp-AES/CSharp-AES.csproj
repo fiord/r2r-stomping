@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net48;net10.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <!-- EnableAot=true を渡した場合のみ net10.0 向けに AOT を有効化 -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0' and '$(EnableAot)' == 'true'">
+    <PublishAot>true</PublishAot>
+  </PropertyGroup>
+
+  <!-- UseRealKey=true で KEY_B (ネイティブ R2R 用の本物鍵) を使ってビルド -->
+  <PropertyGroup Condition="'$(UseRealKey)' == 'true'">
+    <DefineConstants>$(DefineConstants);REAL_KEY</DefineConstants>
+  </PropertyGroup>
+</Project>

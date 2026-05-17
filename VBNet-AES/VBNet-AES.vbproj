@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VBNet_AES</RootNamespace>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+</Project>

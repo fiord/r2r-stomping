@@ -1,0 +1,18 @@
+# Build artifacts
+bin/
+obj/
+
+# Temporary files
+temp/
+
+# Claude Code internal
+.claude/
+
+# Visual Studio
+*.user
+*.suo
+.vs/
+*.rsuser
+
+# NuGet
+*.nupkg
